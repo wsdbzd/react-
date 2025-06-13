@@ -1,0 +1,217 @@
+@import "../../libs/mixin";
+.v-side-wrap {
+  width: 260px;
+  position: fixed;
+  min-height: 100%;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  &:after,
+  &::before {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  &:before {
+    background: url(./sidebar2.jpg);
+    background-size: cover;
+  }
+  &:after {
+    opacity: 0.75;
+    background: #000;
+  }
+  .ivu-avatar-large > * {
+    line-height: 32px;
+  }
+}
+
+.v-menu-modal {
+  .ivu-modal-footer,
+  .ivu-modal-close {
+    display: none;
+  }
+  .list {
+    span {
+      display: block;
+      background: linear-gradient(60deg, #ffa726, #fb8c00);
+      font-size: 16px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 15px;
+      height: 50px;
+      line-height: 50px;
+      box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
+    }
+  }
+}
+
+.v-side {
+  z-index: 30;
+  user-select: none;
+  font-size: 14px;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  .logo {
+    padding: 15px 15px 10px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    img {
+      width: 112px;
+    }
+    p {
+      padding-top: 5px;
+      font-weight: 700;
+    }
+
+    &:after {
+      right: 15px;
+      width: calc(100% - 30px);
+      bottom: 0;
+      height: 1px;
+      content: "";
+      position: absolute;
+      background-color: hsla(0, 0%, 71%, 0.3) !important;
+    }
+  }
+  .menu {
+    overflow: auto;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    height: calc(100vh - 75px);
+    width: 280px;
+    ul {
+      width: 260px;
+      padding-bottom: 30px;
+    }
+    a {
+      color: #fff;
+      background-color: transparent;
+      overflow: hidden;
+      &:hover {
+        outline: none;
+        box-shadow: none;
+        background-color: rgba(200, 200, 200, 0.2);
+      }
+    }
+    .master {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      white-space: nowrap;
+      .text {
+        white-space: nowrap;
+        width: 140px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
+      .tran;
+      margin: 10px 15px 0;
+      padding: 10px 15px;
+      border-radius: 3px;
+      display: block;
+      position: relative;
+      line-height: 30px;
+      i {
+        font-size: 24px;
+        height: 30px;
+        overflow: hidden;
+        margin-right: 15px;
+        position: relative;
+        float: left;
+        top: 3px;
+      }
+      b {
+        .tran;
+        right: 18px;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        position: absolute;
+        margin-top: 13px;
+        border-top: 4px solid;
+        margin-left: 2px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        vertical-align: middle;
+      }
+      &-current {
+        outline: none;
+        box-shadow: none;
+        background-color: rgba(200, 200, 200, 0.2);
+      }
+      &-open {
+        b {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .salver {
+      display: block;
+      overflow: hidden;
+      span {
+        float: left;
+        width: 30px;
+        margin-right: 15px;
+        text-align: center;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      width: auto;
+      margin: 10px 15px 0;
+      padding: 10px;
+      display: block;
+      position: relative;
+      transition: all 300ms linear;
+      line-height: 1.5em;
+      border-radius: 3px;
+    }
+    .router-link-exact-active,
+    .router-link-exact-active:hover {
+      color: #fff;
+      box-shadow: 0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0 rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2);
+      background: #2f7df6;
+      b {
+        transform: rotate(-90deg);
+      }
+    }
+    .sub-menu {
+      height: 0;
+      overflow: hidden;
+      .tran;
+      div {
+        overflow: hidden;
+      }
+    }
+  }
+  .user {
+    padding-bottom: 10px !important;
+    position: relative;
+    a.master {
+      &:hover {
+        background: none !important;
+      }
+    }
+    .ivu-avatar {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    &:after {
+      right: 15px;
+      width: calc(100% - 30px);
+      bottom: 0;
+      height: 1px;
+      content: "";
+      position: absolute;
+      background-color: hsla(0, 0%, 71%, 0.3) !important;
+    }
+  }
+}
